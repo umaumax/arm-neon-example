@@ -42,12 +42,42 @@ export QEMU_LD_PREFIX=/usr/aarch64-linux-gnu/
 
 ### neon
 ```
-arm-linux-gnueabihf-g++ -mfpu=neon -std=c++11 neon_main.cpp -o neon_main
-export QEMU_LD_PREFIX=/usr/arm-linux-gnueabihf
-./neon_main
+$ arm-linux-gnueabihf-g++ -mfpu=neon -std=c++11 neon_main.cpp -o neon_main
+$ export QEMU_LD_PREFIX=/usr/arm-linux-gnueabihf
+$ ./neon_main
+8
+10
+12
+14
+16
+18
+20
+22
+-32
+-32
+-31
+-31
+-30
+-30
+-29
+-29
+32
+32
+33
+33
+34
+34
+35
+35
 ```
 
+#### 基本型
+* [ARM Information Center ベクタのデータ型]( http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0472kj/chr1359125039392_00006.html )
 
+### オーバーフロー
+* [ARM NEONの使い方 加算編 \- おぺんcv]( http://atkg.hatenablog.com/entry/2016/10/09/173928 )
 
-
+### 画像処理の例
+* [Resize 8\-bit image by 2 with ARM NEON \- Stack Overflow]( https://stackoverflow.com/questions/17815959/resize-8-bit-image-by-2-with-arm-neon )
+* [Resize 8\-bit image by 4 with ARM NEON \- Stack Overflow]( https://stackoverflow.com/questions/25234355/resize-8-bit-image-by-4-with-arm-neon )
 
