@@ -1,8 +1,9 @@
-# arm on QEMU on Ubuntu16.04
+# arm on QEMU
 
+## on Ubuntu16.04
 [QEMU でARM エミュレータ環境を作成する \- Qiita]( https://qiita.com/zonomasa/items/b33fba457503e166967a )
 
-## setup
+### setup
 ```
 sudo apt-get install qemu
 sudo apt-get install qemu-user-static
@@ -14,7 +15,7 @@ sudo apt-get install g++-arm-linux-gnueabihf
 sudo apt install g++-aarch64-linux-gnu
 ```
 
-## how to compile
+### how to compile
 ```
 # 32bit
 arm-linux-gnueabihf-g++ main.cpp
@@ -22,7 +23,7 @@ arm-linux-gnueabihf-g++ main.cpp
 aarch64-linux-gnu-g++ main.cpp
 ```
 
-## how to run
+### how to run
 [export QEMU\_LD\_PREFIX=/usr/aarch64\-linux\-gnu/]( http://d.hatena.ne.jp/embedded/20140422/p1 )
 > qemu-user-staticをインストールしたときにbinfmtの設定も行われているので、aarch64のELFオブジェクトを実行しようとすると自動的にqemu-aarch64-user-staticを経由して実行されるようになっています。
 
@@ -70,6 +71,23 @@ $ ./neon_main
 35
 35
 ```
+
+<!-- ## on Max OS X -->
+<!-- [【macOS】ARMのGCCコンパイル環境を構築する（brewからインストール） \| The modern stone age\.]( https://www.yokoweb.net/2018/05/16/macos-gcc-arm-brew-install/ ) -->
+<!--  -->
+<!-- ### how to install -->
+<!-- ``` -->
+<!-- $ brew tap PX4/homebrew-px4 -->
+<!-- $ brew install gcc-arm-none-eabi -->
+<!-- ``` -->
+<!--  -->
+<!-- ### how to confirm -->
+<!-- ``` -->
+<!-- $ arm-none-eabi-gcc --version -->
+<!-- $ arm-none-eabi-g++ --version -->
+<!-- -march=armv7-a -mfpu=neon -mfloat-abi=hard -mtune=cortex-a9 -->
+<!-- ``` -->
+----
 
 #### 基本型
 * [ARM Information Center ベクタのデータ型]( http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0472kj/chr1359125039392_00006.html )
